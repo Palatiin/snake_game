@@ -48,7 +48,7 @@ canvas.create_rectangle(20, 20, 480, 480, fill='grey25', outline='black', width=
 
 x, y = 0, -1
 canvas.bind_all('<Key>', key)
-# BODY
+# SCORE
 body = 0
 canvas.create_text(WIDTH//2, HEIGHT//2, text=body, font=('', 45), tags='score', fill='grey18')
 # SNAKE
