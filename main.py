@@ -10,8 +10,6 @@ canvas = Canvas(root, width=WIDTH, height=HEIGHT, bg="grey25")
 canvas.pack()
 canvas.create_rectangle(20, 20, WIDTH-20, HEIGHT-20, fill="grey25", outline="black", width=5)
 
-# fix canvas.bindall -> unbind on endgame
-
 
 class Game():
     def __init__(self):
