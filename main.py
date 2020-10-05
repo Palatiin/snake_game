@@ -2,15 +2,6 @@ from tkinter import *
 from random import randint
 
 
-WIDTH = 500
-HEIGHT = 500
-root = Tk()
-root.title("Snake Game")
-canvas = Canvas(root, width=WIDTH, height=HEIGHT, bg="grey25")
-canvas.pack()
-canvas.create_rectangle(20, 20, WIDTH-20, HEIGHT-20, fill="grey25", outline="black", width=5)
-
-
 class Game():
     def __init__(self):
         canvas.create_text(WIDTH//2, HEIGHT//2, text='', font=('', 45), tags="score", fill="grey18")
@@ -43,7 +34,7 @@ class Game():
             self.x, self.y = -1, 0
         elif key.keysym == "Right" and self.y != 0:
             self.x, self.y = 1, 0
-   
+
     def spawn_fruit(self):
         self.fx, self.fy = randint(40, WIDTH-40), randint(40, HEIGHT-40)
         canvas.coords("fruit", self.fx-3, self.fy-3, self.fx+3, self.fy+3)
@@ -80,6 +71,15 @@ class Game():
         canvas.delete("fruit")
         canvas.delete("snake")
         canvas.unbind("<Key>")
+
+
+WIDTH = 500
+HEIGHT = 500
+root = Tk()
+root.title("Snake Game")
+canvas = Canvas(root, width=WIDTH, height=HEIGHT, bg="grey25")
+canvas.pack()
+canvas.create_rectangle(20, 20, WIDTH-20, HEIGHT-20, fill="grey25", outline="black", width=5)
 
 game = Game()
 root.mainloop()
